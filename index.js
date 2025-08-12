@@ -11,7 +11,7 @@ import { validateOptions, hasFluidFunction } from './lib/utils.js';
  * @param {Object} opts - Plugin options
  * @param {string} opts.tokensPath - Path to CSS tokens file (default: './src/assets/tokens.css')
  * @param {number} opts.minBreakpoint - Minimum viewport breakpoint in rem (default: 21.25)
- * @param {number} opts.maxBreakpoint - Maximum viewport breakpoint in rem (default: 96)
+ * @param {number} opts.maxBreakpoint - Maximum viewport breakpoint in rem (default: 80)
  * @returns {Object} PostCSS plugin
  */
 export default function fluidSizingPlugin(opts = {}) {

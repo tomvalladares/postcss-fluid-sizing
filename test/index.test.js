@@ -48,7 +48,7 @@ const tests = [
   {
     name: 'Basic fluid with numeric values',
     input: '.test { font-size: fluid(1, 2); }',
-    expected: '.test { font-size: clamp(1.0000rem, 0.7157rem + 1.3378vw, 2.0000rem); }'
+    expected: '.test { font-size: clamp(1.0000rem, 0.6383rem + 1.7021vw, 2.0000rem); }'
   },
   {
     name: 'Fluid with custom breakpoints', 
@@ -58,17 +58,17 @@ const tests = [
   {
     name: 'Fluid with CSS tokens',
     input: '.test { font-size: fluid(--text-sm, --text-xl); }',
-    expected: '.test { font-size: clamp(0.8750rem, 0.7684rem + 0.5017vw, 1.2500rem); }'
+    expected: '.test { font-size: clamp(0.8750rem, 0.7394rem + 0.6383vw, 1.2500rem); }'
   },
   {
     name: 'Multiple fluid calls in same declaration',
     input: '.test { margin: fluid(0.5, 1) fluid(--space-sm, --space-lg); }',
-    expected: '.test { margin: clamp(0.5000rem, 0.3579rem + 0.6689vw, 1.0000rem) clamp(0.5000rem, 0.2157rem + 1.3378vw, 1.5000rem); }'
+    expected: '.test { margin: clamp(0.5000rem, 0.3191rem + 0.8511vw, 1.0000rem) clamp(0.5000rem, 0.1383rem + 1.7021vw, 1.5000rem); }'
   },
   {
     name: 'Inverted scaling (min > max)',
     input: '.test { font-size: fluid(2, 1); }',
-    expected: '.test { font-size: clamp(1.0000rem, 2.2843rem + -1.3378vw, 2.0000rem); }'
+    expected: '.test { font-size: clamp(1.0000rem, 2.3617rem + -1.7021vw, 2.0000rem); }'
   },
   {
     name: 'No fluid function should pass through unchanged',
@@ -78,7 +78,7 @@ const tests = [
   {
     name: 'Mixed fluid and regular values',
     input: '.test { padding: 1rem fluid(0.5, 2) 0; }',
-    expected: '.test { padding: 1rem clamp(0.5000rem, 0.0736rem + 2.0067vw, 2.0000rem) 0; }'
+    expected: '.test { padding: 1rem clamp(0.5000rem, -0.0426rem + 2.5532vw, 2.0000rem) 0; }'
   }
 ];
 

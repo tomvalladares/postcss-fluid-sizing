@@ -29,7 +29,7 @@ export default {
     fluidSizingPlugin({
       tokensPath: './src/assets/tokens.css', // optional
       minBreakpoint: 21.25, // 340px, optional  
-      maxBreakpoint: 96      // 1536px, optional
+      maxBreakpoint: 80      // 1280px, optional
     })
   ]
 };
@@ -85,7 +85,7 @@ Create a tokens file (default: `./src/assets/tokens.css`):
 |--------|------|---------|-------------|
 | `tokensPath` | `string` | `'./src/assets/tokens.css'` | Path to CSS tokens file |
 | `minBreakpoint` | `number` | `21.25` | Minimum viewport width in rem (340px) |  
-| `maxBreakpoint` | `number` | `96` | Maximum viewport width in rem (1536px) |
+| `maxBreakpoint` | `number` | `80` | Maximum viewport width in rem (1280px) |
 
 ## Examples
 
