@@ -1,5 +1,5 @@
 {
-  "name": "postcss-fluid-sizing-plugin",
+  "name": "postcss-fluid-sizing",
   "version": "1.0.0",
   "description": "PostCSS plugin for fluid typography and sizing with clamp() and CSS custom property token support",
   "main": "index.js",
@@ -20,12 +20,12 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/tomvalladares/postcss-fluid-sizing-plugin.git"
+    "url": "git+https://github.com/tomvalladares/postcss-fluid-sizing.git"
   },
   "bugs": {
-    "url": "https://github.com/tomvalladares/postcss-fluid-sizing-plugin/issues"
+    "url": "https://github.com/tomvalladares/postcss-fluid-sizing/issues"
   },
-  "homepage": "https://github.com/tomvalladares/postcss-fluid-sizing-plugin#readme",
+  "homepage": "https://github.com/tomvalladares/postcss-fluid-sizing#readme",
   "peerDependencies": {
     "postcss": "^8.4.0"
   },

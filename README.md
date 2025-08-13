@@ -1,4 +1,4 @@
-# PostCSS Fluid Sizing Plugin
+# PostCSS Fluid Sizing
 
 A PostCSS plugin that transforms `fluid()` function calls into CSS `clamp()` functions for responsive typography and sizing. Supports CSS custom property tokens for consistent design systems.
 
@@ -13,7 +13,7 @@ A PostCSS plugin that transforms `fluid()` function calls into CSS `clamp()` fun
 ## Installation
 
 ```bash
-npm install postcss-fluid-sizing-plugin --save-dev
+npm install postcss-fluid-sizing --save-dev
 ```
 
 ## Usage
@@ -22,7 +22,7 @@ npm install postcss-fluid-sizing-plugin --save-dev
 
 ```js
 // postcss.config.js
-import fluidSizingPlugin from 'postcss-fluid-sizing-plugin';
+import fluidSizingPlugin from 'postcss-fluid-sizing';
 
 export default {
   plugins: [
