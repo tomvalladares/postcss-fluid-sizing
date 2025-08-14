@@ -13,6 +13,9 @@ const tokensContent = `
   --space-sm: 0.5rem;
   --space-md: 1rem;
   --space-lg: 1.5rem;
+  --text-px-sm: 14px;
+  --text-px-lg: 20px;
+  --space-px-md: 16px;
 }
 `;
 
@@ -79,6 +82,21 @@ const tests = [
     name: 'Mixed fluid and regular values',
     input: '.test { padding: 1rem fluid(0.5, 2) 0; }',
     expected: '.test { padding: 1rem clamp(0.5000rem, -0.0426rem + 2.5532vw, 2.0000rem) 0; }'
+  },
+  {
+    name: 'Fluid with px values',
+    input: '.test { font-size: fluid(16px, 24px); }',
+    expected: '.test { font-size: clamp(1.0000rem, 0.8191rem + 0.8511vw, 1.5000rem); }'
+  },
+  {
+    name: 'Fluid with mixed px and rem values',
+    input: '.test { margin: fluid(8px, 2rem); }',
+    expected: '.test { margin: clamp(0.5000rem, -0.0426rem + 2.5532vw, 2.0000rem); }'
+  },
+  {
+    name: 'Fluid with px tokens',
+    input: '.test { font-size: fluid(--text-px-sm, --text-px-lg); }',
+    expected: '.test { font-size: clamp(0.8750rem, 0.7394rem + 0.6383vw, 1.2500rem); }'
   }
 ];
 

@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-PostCSS Fluid Sizing is a PostCSS plugin that transforms `fluid()` function calls into CSS `clamp()` functions for responsive typography and sizing. The plugin supports CSS custom property tokens for design system consistency and includes easing curves for non-linear scaling behavior.
+PostCSS Fluid Sizing is a PostCSS plugin that transforms `fluid()` function calls into CSS `clamp()` functions for responsive typography and sizing. The plugin supports CSS custom property tokens for design system consistency, automatic px-to-rem conversion, and includes easing curves for non-linear scaling behavior.
 
 ### Architecture
 
@@ -17,15 +17,16 @@ The codebase follows a modular architecture:
 
 The plugin processes CSS declarations by:
 1. Detecting `fluid()` function calls in CSS values
-2. Parsing parameters (min/max sizes, optional breakpoints, and easing curves)  
-3. Resolving CSS custom property tokens from external token files
-4. Applying easing functions for non-linear scaling (quad, cubic, ease-in/out)
-5. Calculating interpolation between breakpoints (linear or curve approximation)
-6. Outputting CSS `clamp()` functions with precise mathematical formulas
+2. Parsing parameters (min/max sizes, optional breakpoints, and easing curves)
+3. Converting px values to rem using configurable base size (default: 16px = 1rem)
+4. Resolving CSS custom property tokens from external token files (supports both rem and px)
+5. Applying easing functions for non-linear scaling (quad, cubic, ease-in/out)
+6. Calculating interpolation between breakpoints (linear or curve approximation)
+7. Outputting CSS `clamp()` functions with precise mathematical formulas in rem units
 
 ### Key Components
 
-**Token Resolution**: The plugin can resolve CSS custom properties (e.g., `--text-lg`) from external token files, defaulting to `./src/assets/tokens.css`. Token values are cached and re-parsed on each build.
+**Token Resolution**: The plugin can resolve CSS custom properties (e.g., `--text-lg`) from external token files, defaulting to `./src/assets/tokens.css`. Supports both rem and px values in tokens, with automatic px-to-rem conversion. Token values are cached and re-parsed on each build.
 
 **Fluid Calculation**: Uses mathematical formulas to generate responsive `clamp()` functions:
 - **Linear**: `slope = (maxSize - minSize) / (maxBreakpoint - minBreakpoint)`
@@ -66,6 +67,7 @@ Plugin accepts these options:
 - `tokensPath`: Path to CSS tokens file (default: `./src/assets/tokens.css`)
 - `minBreakpoint`: Minimum viewport width in rem (default: 21.25 = 340px)
 - `maxBreakpoint`: Maximum viewport width in rem (default: 80 = 1280px)
+- `basePxSize`: Base font size for px to rem conversion (default: 16)
 - `precision`: Decimal precision for calculations (default: 4)
 
 ## Code Style
