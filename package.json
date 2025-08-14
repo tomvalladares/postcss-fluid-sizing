@@ -1,6 +1,6 @@
 {
   "name": "postcss-fluid-sizing",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "PostCSS plugin for fluid typography and sizing with clamp() and CSS custom property token support",
   "main": "index.js",
   "type": "module",
